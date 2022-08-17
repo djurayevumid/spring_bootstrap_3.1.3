@@ -34,26 +34,6 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label>User's department</label>
-                        <input
-                                th:type="text"
-                                th:name="department"
-                                class="form-control"
-                                th:field="*{department}"
-                                placeholder="Enter user's department"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label>User's salary</label>
-                        <input
-                                th:type="numbers"
-                                th:name="salary"
-                                class="form-control"
-                                th:field="*{salary}"
-                                placeholder="Enter user's salary"
-                        />
-                    </div>
-                    <div class="form-group">
                         <label>User's e-mail</label>
                         <input
                                 th:type="text"
@@ -61,6 +41,16 @@
                                 class="form-control"
                                 th:field="*{username}"
                                 placeholder="Enter user's e-mail"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's age</label>
+                        <input
+                                type="number"
+                                th:name="age"
+                                class="form-control"
+                                th:field="*{age}"
+                                placeholder="Enter user's age"
                         />
                     </div>
                     <div class="form-group">

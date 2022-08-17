@@ -22,12 +22,10 @@ public class User implements UserDetails {
     private String name;
     @Column(name = "Surname")
     private String surname;
-    @Column(name = "Department")
-    private String department;
-    @Column(name = "Salary")
-    private int salary;
     @Column(name = "username")
     private String username;
+    @Column(name = "age")
+    private int age;
     @Column(name = "password")
     private String password;
 
@@ -40,12 +38,11 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, String surname, String department, int salary, String username, Collection<Role> roles) {
+    public User(String name, String surname, String username, int age, Collection<Role> roles) {
         this.name = name;
         this.surname = surname;
-        this.department = department;
-        this.salary = salary;
         this.username = username;
+        this.age = age;
         this.roles = roles;
     }
 
@@ -73,22 +70,6 @@ public class User implements UserDetails {
         this.surname = surname;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -113,6 +94,13 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     @Override
     public boolean isAccountNonExpired() {

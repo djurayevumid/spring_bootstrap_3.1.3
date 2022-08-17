@@ -7,23 +7,7 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div id="header" class="d-flex bg-dark p-0">
-    <div class="p-2 w-100 text-white">
-        <a><span class="p-2 align-middle" th:text="${user.username}"></span></a>
-        <span class="align-middle">with roles:</span>
-        <span class="align-middle" th:block th:each="role : ${user.getRoles()}">
-                                            <span th:text="${role.name}"/>
-            </th:block>
-
-            </span>
-    </div>
-    <a></a>
-    <form th:action="@{/logout}" method="post">
-        <button type="submit" class="btn btn-dark text-secondary">Logout</button>
-    </form>
-    </a>
-</div>
-
+<header th:replace="parts/header :: header"></header>
 <div class="container">
     <div class="row">
         <h1>Table of
@@ -33,23 +17,21 @@
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Surname</th>
-            <th>Department</th>
-            <th>Salary</th>
             <th>Username</th>
-            <th>Password</th>
+            <th>Age</th>
             <th>Role</th>
 
         </tr>
         </thead>
         <tbody>
+        <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.surname}"></td>
-        <td th:text="${user.department}"></td>
-        <td th:text="${user.salary}"></td>
         <td th:text="${user.username}"></td>
-        <td th:text="${user.password}"></td>
+        <td th:text="${user.age}"></td>
         <td th:text="${user.roles}"></td>
 
         </tbody>

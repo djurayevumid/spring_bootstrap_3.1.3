@@ -1,0 +1,31 @@
+<div th:fragment="userInfo">
+  <h1 class="ps-3">User</h1>
+  <div class="container-fluid">
+    <div class="row border">
+      <h5 class="p-2">About user</h5>
+    </div>
+    <div class="row border bg-white">
+      <table class="table table-borderless table-striped">
+        <thead>
+        <tr class="border-top">
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Username</th>
+          <th scope="col">Age</th>
+          <th scope="col">Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="border-top bg-light" th:object="${user}">
+          <td th:text="*{id}"></td>
+          <td th:text="*{name}"></td>
+          <td th:text="*{surname}"></td>
+          <td th:text="*{username}"></td>
+          <td th:text="*{age}"></td>
+          <td th:text="*{roles}"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
