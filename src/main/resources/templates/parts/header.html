@@ -4,8 +4,7 @@
       <div>
         <span class="fw-bold" th:text="${user.username}">USERNAME</span>
         <span> with roles: </span>
-        <span sec:authorize="hasRole('ROLE_ADMIN')">ADMIN</span>
-        <span sec:authorize="hasRole('ROLE_USER')">USER</span>
+        <span th:text="${user.roles}">USER</span>
       </div>
       <a class="text-decoration-none font-weight-bold text-secondary" th:href="@{/logout}">Logout</a>
     </div>

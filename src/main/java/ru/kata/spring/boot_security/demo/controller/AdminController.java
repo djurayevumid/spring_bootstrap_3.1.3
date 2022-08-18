@@ -47,7 +47,7 @@ public class AdminController {
     public String createUser(Model model) {
         User user = new User();
         model.addAttribute("user", user);
-        return "create_user";
+        return "users_info";
     }
 
     @PostMapping("/admin/users/{id}")

@@ -11,19 +11,19 @@
           <th scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Surname</th>
-          <th scope="col">Username</th>
+          <th scope="col">E-Mail</th>
           <th scope="col">Age</th>
           <th scope="col">Role</th>
         </tr>
         </thead>
         <tbody>
         <tr class="border-top bg-light" th:object="${user}">
-          <td th:text="*{id}"></td>
-          <td th:text="*{name}"></td>
-          <td th:text="*{surname}"></td>
-          <td th:text="*{username}"></td>
-          <td th:text="*{age}"></td>
-          <td th:text="*{roles}"></td>
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.name}"></td>
+          <td th:text="${user.surname}"></td>
+          <td th:text="${user.username}"></td>
+          <td th:text="${user.age}"></td>
+          <td th:text="${user.roles}"></td>
         </tr>
       </table>
     </div>

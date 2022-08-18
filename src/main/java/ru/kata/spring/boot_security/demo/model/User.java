@@ -16,11 +16,11 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private int id;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
-    @Column(name = "Surname")
+    @Column(name = "surname")
     private String surname;
     @Column(name = "username")
     private String username;
@@ -127,5 +127,16 @@ public class User implements UserDetails {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && age == user.age && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(roles, user.roles);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, username, age, password, roles);
+    }
 }
