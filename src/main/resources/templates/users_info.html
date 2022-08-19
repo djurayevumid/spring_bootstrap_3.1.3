@@ -205,9 +205,12 @@
                                                         id="rolesEdit"
                                                         name="roles"
                                                 >
-                                                    <option th:each="role: ${roles}"
-                                                            th:text="${role.toString()}"
-                                                            selected>
+                                                    <option selected="true" value="ROLE_USER"
+                                                            th:field="*{roles}" th:type="text">
+                                                        USER
+                                                    </option>
+                                                    <option value="ROLE_ADMIN" th:field="*{roles}" th:type="text">
+                                                        ADMIN
                                                     </option>
                                                 </select>
                                             </div>

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -38,11 +39,12 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, String surname, String username, int age, Collection<Role> roles) {
+    public User(String name, String surname, String username, int age, String password, Collection<Role> roles) {
         this.name = name;
         this.surname = surname;
         this.username = username;
         this.age = age;
+        this.password = password;
         this.roles = roles;
     }
 
@@ -124,7 +126,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        return roles.stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName())).collect(Collectors.toList());
     }
 
     @Override
